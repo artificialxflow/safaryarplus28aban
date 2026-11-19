@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-family: 'Vazirmatn', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Vazirmatn', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #F8FAFC;
+    color: #0F172A;
+    overflow-x: hidden;
+  }
+}
+
+.font-mono-tabular {
+  font-family: 'IBM Plex Mono', 'Vazirmatn', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Custom subtle scrollbars for wide ERP tables */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Print Isolation for E-Ticket Boarding Pass & Financial Statement PDF */
+@media print {
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  body {
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  body.printing-ticket .print-hide-on-ticket {
+    display: none !important;
+  }
+
+  body.printing-statement .print-hide-on-statement {
+    display: none !important;
+  }
+
+  .print-modal-backdrop {
+    position: static !important;
+    background: #FFFFFF !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
+  .print-modal-card {
+    max-height: none !important;
+    max-width: 100% !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+  }
+
+  .print-only-surface {
+    box-shadow: none !important;
+    border: 1px solid #CBD5E1 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+    break-inside: avoid;
+  }
+}

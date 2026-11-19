@@ -1,0 +1,6 @@
+{
+  "name": "سفریار پلاس | SafarYar Plus",
+  "description": "سامانه یکپارچه گردشگری، رزرواسیون تور و هتل، مدیریت کاروان، صدور بلیت هواپیما و حسابداری آژانس مسافرتی سفریار پلاس.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
